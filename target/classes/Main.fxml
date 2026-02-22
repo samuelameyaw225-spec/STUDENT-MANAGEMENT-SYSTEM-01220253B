@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MainController">
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox prefHeight="650.0" prefWidth="158.0" spacing="18.0" style="-fx-background-color: #6A0DAD;" BorderPane.alignment="CENTER">
+
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="30" />
+            </padding>
+
+            <Label text="AMEYAW" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="26.0" />
+                </font>
+            </Label>
+
+            <Button fx:id="btnDashboard" maxWidth="Infinity" text="Dashboard" />
+            <Button fx:id="btnStudents" maxWidth="Infinity" text="Students" />
+            <Button fx:id="btnReports" maxWidth="Infinity" text="Reports" />
+            <Button fx:id="btnImportExport" maxWidth="Infinity" text="Imports / Exports" />
+            <Button fx:id="btnSettings" maxWidth="Infinity" text="Settings" />
+        </VBox>
+    </left>
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <VBox spacing="30" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="30" left="40" right="40" top="30" />
+            </padding>
+
+            <!-- DASHBOARD TITLE -->
+            <Label prefHeight="51.0" prefWidth="255.0" style="-fx-font-size: 26px; -fx-font-weight: bold;" text="Dashboard Overview" />
+
+            <!-- STATISTICS SECTION -->
+            <GridPane hgap="30" prefHeight="569.0" prefWidth="700.0" vgap="25">
+
+                <!-- CARD 1 -->
+                <VBox prefHeight="247.0" prefWidth="335.0" style="-fx-background-color: white;                             -fx-padding: 20;                             -fx-border-radius: 12;                             -fx-background-radius: 12;                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.2, 0, 4);">
+
+                    <Label prefHeight="20.0" prefWidth="311.0" style="-fx-font-size: 14px; -fx-text-fill: gray;" text="Total Students" />
+                    <Label fx:id="lblTotalStudents" prefHeight="40.0" prefWidth="303.0" style="-fx-font-size: 28px; -fx-font-weight: bold;" text="0" />
+                </VBox>
+
+                <!-- CARD 2 -->
+                <VBox prefHeight="108.0" prefWidth="357.0" style="-fx-background-color: white;                             -fx-padding: 20;                             -fx-border-radius: 12;                             -fx-background-radius: 12;                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.2, 0, 4);" GridPane.columnIndex="1">
+
+                    <Label prefHeight="20.0" prefWidth="105.0" style="-fx-font-size: 14px; -fx-text-fill: gray;" text="Active Students" />
+                    <Label fx:id="lblActiveStudents" style="-fx-font-size: 28px; -fx-font-weight: bold;" text="0" />
+                </VBox>
+
+                <!-- CARD 3 -->
+                <VBox prefHeight="266.0" prefWidth="319.0" style="-fx-background-color: white;                             -fx-padding: 20;                             -fx-border-radius: 12;                             -fx-background-radius: 12;                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.2, 0, 4);" GridPane.columnIndex="0" GridPane.rowIndex="1">
+
+                    <Label style="-fx-font-size: 14px; -fx-text-fill: gray;" text="Inactive Students" />
+                    <Label fx:id="lblInactiveStudents" style="-fx-font-size: 28px; -fx-font-weight: bold;" text="0" />
+                </VBox>
+
+                <!-- CARD 4 -->
+                <VBox prefHeight="100.0" prefWidth="136.0" style="-fx-background-color: white;                             -fx-padding: 20;                             -fx-border-radius: 12;                             -fx-background-radius: 12;                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.2, 0, 4);" GridPane.columnIndex="1" GridPane.rowIndex="1">
+
+                    <Label style="-fx-font-size: 14px; -fx-text-fill: gray;" text="Average GPA" />
+                    <Label fx:id="lblAvgGpa" style="-fx-font-size: 28px; -fx-font-weight: bold;" text="0.00" />
+                </VBox>
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+
+            </GridPane>
+
+        </VBox>
+    </center>
+
+</BorderPane>
